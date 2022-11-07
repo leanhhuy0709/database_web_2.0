@@ -187,18 +187,37 @@ function renderPayment()
     ReactDOM.render(OrderElement, Payment)
 }
 
+function f(money)
+{
+    //1 -> '001'
+    //12 -> '123'
+    //123 -> '123'
+    if(money >= 1000) return 'Error in line 195 main.js';
+    if(money >= 100) return money.toString();
+    if(money >= 10) return '0' + money.toString();
+    return '00' + money.toString();
+}
+
 function toMoney(money)
 {
-    money = parseInt(money * 1000);
-    if (money == 0) return '0đ'
-    if (money < 1000000)
+    money = parseInt(money*1000)
+    //1000 -> 1.000đ
+    //1234567 -> 1.234.567đ
+    var result = ''
+    var arr = []
+    
+    while(money >= 1000)
     {
-        let b = (money%1000).toString();
-        if (money % 1000 == 0) b = '000';
-        return parseInt(money/1000).toString() + '.' + b + 'đ'
+        arr.push(money % 1000);
+        money = parseInt(money / 1000);
     }
-    alert(money)
-    return 'Error'
+
+
+    result = arr.map(f).reduce((cb, ele)=>'.' + ele + cb, '');
+
+    result = money.toString() + '.' + result + 'đ';
+    result = result.replace('.', '');
+    return result;
 }
 
 function caculOrder()
@@ -244,12 +263,14 @@ function plusFood(foodID)
 {
     cart[foodID]++;
     document.getElementById('value_' + foodID.toString()).innerHTML = cart[foodID].toString();
+    renderPayment();
 }
 function minusFood(foodID)
 {
     if (cart[foodID] > 0)
         cart[foodID]--;
     document.getElementById('value_' + foodID.toString()).innerHTML = cart[foodID].toString();
+    renderPayment();
 }
 
 function filter(keyword)
