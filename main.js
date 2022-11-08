@@ -263,14 +263,16 @@ function plusFood(foodID)
 {
     cart[foodID]++;
     document.getElementById('value_' + foodID.toString()).innerHTML = cart[foodID].toString();
-    renderPayment();
+    //renderPayment();
+    renderCart();
 }
 function minusFood(foodID)
 {
     if (cart[foodID] > 0)
         cart[foodID]--;
     document.getElementById('value_' + foodID.toString()).innerHTML = cart[foodID].toString();
-    renderPayment();
+    //renderPayment();
+    renderCart();
 }
 
 function filter(keyword)
