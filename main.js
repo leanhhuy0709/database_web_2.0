@@ -281,6 +281,7 @@ function filter(keyword)
     for(let i = 0; i < size; i++)
     {
         const tmp = document.getElementById('food_' + i.toString())
+        if(!tmp) {continue};
         if (food[i]['type'].search(keyword) != -1)
             tmp.style.display = 'block';
         else
