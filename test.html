@@ -1,0 +1,42 @@
+<!--
+    CUSTOMER
+-->
+
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+<title>BKU FOOD</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./main.css">
+<link rel="stylesheet" href="./w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script crossorigin src="https://unpkg.com/react@17.0.0/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.production.min.js"></script> 
+</head>
+
+<body>
+<button class = "w3-btn w3-cyan w3-margin" onclick="hello('Yuha')"> Click me!</button>
+<div id = "myBtn"></div>
+
+<script>
+    const myBtn = document.getElementById('myBtn');
+    const attr = React.createElement('button', {className: 'w3-btn w3-cyan w3-margin', 
+        onClick: function(){hello('Yahu')}}, 'Click me!');
+    ReactDOM.render(attr, myBtn);
+    var a = null;
+    function hello(str)
+    {
+        f();
+        a.b = 1;
+        console.log(a.b);
+        
+    }
+
+    function f()
+    {
+        a = {b: 69};
+    }
+</script>
+
+</body>
+</html>

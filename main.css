@@ -2,9 +2,70 @@
 */
 
 .hw-food-item {
-    width:25%;
-    margin-left: 4.165%;
-    margin-right: 4.165%;
-    margin-top: 20px;
-    min-width: 300px;
+    display: inline-block;
+    width: 300px;
+    margin: 20px 20px;
 }
+
+.hw-input {
+    width: 300px;
+    border: 2px Solid black;
+    margin: 5px;
+    display: inline-block;
+}
+
+.hw-border {
+    border: 2px Solid black!important;
+}
+
+.hw-inline-block
+{
+    display: inline-block!important;
+}
+
+/*------------------*/
+
+/*Login Form*/
+.login {
+    padding: 20px;
+    border:2px solid black;
+    width: 440px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+.input {
+    display:block;
+    width: 400px;
+    border:1px solid black;
+    border-radius: 5px;  
+    margin: 10px 0px 10px 0px;
+    padding: 10px 0px 10px 0px;
+}
+
+.button {
+    background-color: cyan;
+    color: black;
+    border: none;
+    border-radius: 5px;  
+    width: 132px;
+    height: 40px;
+    margin:  10px 0px 10px 0px;
+    padding: 0;
+}
+
+.button:hover {
+    background-color: rgba(241, 39, 39, 0.963);
+    color: white;
+}
+
+@keyframes changeColor {
+    0%   {background-color:#3DA35D;}
+}
+
+.width400px {
+    width: 400px!important;
+}
+

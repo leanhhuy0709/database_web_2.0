@@ -5,46 +5,62 @@
 <!DOCTYPE html>
 <html lang = "en">
 <head>
+<meta charset="utf-8">
 <title>BKU FOOD</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="utf-8">
 <link rel="stylesheet" href="./main.css">
 <link rel="stylesheet" href="./w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script crossorigin src="https://unpkg.com/react@17.0.0/umd/react.production.min.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.production.min.js"></script> 
-
-
 </head>
 
 <body>
 <!--Navigation bar-->
-    <div id = "naviBar"></div>
-
-
-<!--Type Page-->
-    <div class="w3-bar" style = "margin-top: 50px;">
-        <button class="w3-bar-item w3-button" onclick="filter('phở')">Phở</button>
-        <button class="w3-bar-item w3-button" onclick="filter('cơm')">Cơm</button>
-        <button class="w3-bar-item w3-button" onclick="filter('mì')">Mì</button>
-        <button class="w3-bar-item w3-button" onclick="filter('bánh mì')">Bánh mì</button>
-        <button class="w3-bar-item w3-button" onclick="filter('other')">Khác</button>
-        <button class="w3-bar-item w3-button" onclick="filter('')">All</button>
+    <div class="w3-bar w3-border w3-cyan w3-top">
+        <a href="user/customer.html" class="w3-bar-item w3-button"><b>BKU FOOD</b></a>
+        <a href="index.html" class="w3-bar-item w3-button w3-right"><b>Login</b></a>
     </div>
-<!--Food List-->
-    <div id = "foodList">        
-    </div>
+<!--Login page
+    <form class = "w3-container" style = "margin-top: 50px;" type = "post">
+        <label><b>Type user: </b></label>
+        <select name="type_user" id="type_user">
+            <option value="Customer">Customer</option>
+            <option value="Restaurant Owner">Restaurant Owner</option>
+            <option value="Admin">Admin</option>
+        </select>
+        <br>
+        <label><b>Username</b></label>
+        <input id = "USERNAME" class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname" required>
+        <label><b>Password</b></label>
+        <input id = "PASSWORD" class="w3-input w3-border" type="password" placeholder="Enter Password" name="psw" required>
+        
+        <button class = "w3-btn w3-cyan w3-margin" type = "submit">Submit (Post username, password, typeUser to server)</button>
+        <p>Note: Submit sẽ chuyển hướng trang dựa trên input nhưng hiện tại chưa có nên sẽ dùng tạm các button dưới đây!</p>
+        <a href = "user/customer.html" class = "w3-btn w3-cyan w3-margin">Customer</a>
+        <a href = "user/co-restaurant.html" class = "w3-btn w3-cyan w3-margin">Co-restaurant</a>
+        <a href = "user/admin.html" class = "w3-btn w3-cyan w3-margin">Admin</a>
+        <script type="text/javascript" src="./database.js"></script>
 
-<!--Cart-->
-    <div id = "cart">        
-    </div>
+    </form>
+-->
+    <form class = "login" type = "post">
+        <h1>Đăng nhập</h1>
+        <label><b>Type user: </b></label>
+        <select name="type_user" id="type_user">
+            <option value="Customer">Customer</option>
+            <option value="Restaurant Owner">Restaurant Owner</option>
+            <option value="Admin">Admin</option>
+        </select><br><br>
+        <label><b>Username</b></label>
+        <input name = "username" class = "input width400px" type="text" placeholder="Enter Username" required>
+        <label><b>Password</b></label>
+        <input name = "password" class = "input width400px" type="password" placeholder="Enter Password" required>
 
-<!--Payment-->
-    <div id = "payment"></div>
+        <button type = "submit" class = "button width400px">Login</button>
+        <p>Note: Login sẽ chuyển hướng trang dựa trên input nhưng hiện tại chưa có nên sẽ dùng tạm các button dưới đây!</p>
+        <a href = "user/customer.html">Customer</a>
+        <a href = "user/co-restaurant.html">Co-restaurant</a>
+        <a href = "user/admin.html">Admin</a>
+    </form>
     
-<!--Java Script-->
-    <script type="text/javascript" src="./database.js"></script>
-    <script type="text/javascript" src="./main.js"></script>
-
 </body>
 </html>
